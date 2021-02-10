@@ -10,7 +10,7 @@ hosts = [
 
   { :hostname => "n2-k8s-worker1",  :ip => "192.168.77.11", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n3-k8s-worker2",  :ip => "192.168.7712", :cpu => "2", :ram => "2048" },
+  { :hostname => "n3-k8s-worker2",  :ip => "192.168.77.12", :cpu => "2", :ram => "2048" },
 
   { :hostname => "n4-k8s-bastion",  :ip => "192.168.77.13", :cpu => "2", :ram => "2048" },
 
