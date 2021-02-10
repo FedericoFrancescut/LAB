@@ -6,7 +6,7 @@
 
 hosts = [
 
-  { :hostname => "n1-k8s-controlplane",  :ip => "192.168.1.77.10", :cpu => "2", :ram => "2048" },
+  { :hostname => "n1-k8s-controlplane",  :ip => "192.168.77.10", :cpu => "2", :ram => "2048" },
 
   { :hostname => "n2-k8s-worker1",  :ip => "192.168.77.11", :cpu => "2", :ram => "2048" },
 
