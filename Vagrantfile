@@ -6,25 +6,13 @@
 
 hosts = [
 
-  { :hostname => "n0-k8s-bastion",        :ip => "192.168.1.110", :cpu => "1", :ram => "1024" },
+  { :hostname => "n1-k8s-controlplane",  :ip => "192.168.1.77.10", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n1-k8s-controlplane1",  :ip => "192.168.1.111", :cpu => "2", :ram => "1792" },
+  { :hostname => "n2-k8s-worker1",  :ip => "192.168.77.11", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n2-k8s-controlplane2",  :ip => "192.168.1.112", :cpu => "2", :ram => "1792" },
+  { :hostname => "n3-k8s-worker2",  :ip => "192.168.7712", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n3-k8s-controlplane3",  :ip => "192.168.1.113", :cpu => "2", :ram => "1792" },
-
-# { :hostname => "n4-k8s-infraworker1",   :ip => "192.168.1.114", :cpu => "1", :ram => "1280" },
-
-# { :hostname => "n5-k8s-infraworker2",   :ip => "192.168.1.115", :cpu => "1", :ram => "1280" },
-
-# { :hostname => "n6-k8s-infraworker3",   :ip => "192.168.1.116", :cpu => "1", :ram => "1280" }
-
-# { :hostname => "n7-k8s-computeworker1", :ip => "192.168.1.117", :cpu => "2", :ram => "1536" },
-
-  { :hostname => "n8-k8s-computeworker2", :ip => "192.168.1.118", :cpu => "2", :ram => "1536" },
-
-  { :hostname => "n9-k8s-computeworker3", :ip => "192.168.1.119", :cpu => "2", :ram => "1536" }
+  { :hostname => "n4-k8s-bastion",  :ip => "192.168.77.13", :cpu => "2", :ram => "2048" },
 
 ]
 
