@@ -101,10 +101,10 @@
     - name: Copy join command to local file
       local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
   #setup handler for checking Docker daemon
-  handlers:
-    - name: docker status
-      service: 
-        name: docker 
-        state: started
+      handlers:
+        - name: docker status
+          service: 
+            name: docker 
+            state: started
 
 
