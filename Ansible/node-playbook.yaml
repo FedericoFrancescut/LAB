@@ -1,5 +1,4 @@
----
-- hosts: master
+- hosts: node
   become: true
   tasks:
   #installing various packages and adding the user vagrant to the group docker
@@ -80,31 +79,17 @@
         name: kubelet
         daemon_reload: yes
         state: restarted
-  #initialize the Kubernetes cluster with kubeadm (applicable only on master node)
-    - name: Initialized the Kubernetes cluster  
-      command: kubeadm init --apiserver-advertise-address="192.168.77.10" --apiserver-cert-extra-sans="192.168.77.10" --node-name n1-k8s-controlplane --pod-network-cidr=192.168.0.0/16
-  #setup the kube config file for the vagrant user to access the kubernetes cluster
-    - name: Setup kubeconfig for vagrant user
-      command: "{{ item }}"
-      with_items:
-        - mkdir -p /home/vagrant/.kube
-        - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
-        - chown vagrant:vagrant /home/vagrant/.kube/config
-  #setup the container networking provider and the network policy engine
-    - name: Install calico pod network 
-      become: false
-      command: kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml
-  #generate kube join command for joining the node to the Kubernetes cluster and store the command in the file named join-command
-    - name: Generate join command
-      command: kubeadm token create --print-join-command
-      register: join_command
-    - name: Copy join command to local file
-      local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
+  #join the nodes to the Kubernetes cluster
+    - name: Copy the join command to server location
+      copy: 
+        src: join-command 
+        dest: /tmp/join-command.sh 
+        mode: 0777
+    - name: Join the node to cluster
+      command: sh /tmp/join-command.sh
   #setup handler for checking Docker daemon
       handlers:
         - name: docker status
           service: 
             name: docker 
             state: started
-
-
