@@ -6,13 +6,13 @@
 
 hosts = [
 
-  { :hostname => "n1-master",  :ip => "192.168.1.10", :cpu => "2", :ram => "4096" },
+  { :hostname => "n1-master",  :ip => "192.168.15.10", :cpu => "2", :ram => "4096" },
 
-  { :hostname => "n2-worker1",  :ip => "192.168.1.11", :cpu => "2", :ram => "2048" },
+  { :hostname => "n2-worker1",  :ip => "192.168.15.11", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n3-worker2",  :ip => "192.168.1.12", :cpu => "2", :ram => "2048" },
+  { :hostname => "n3-worker2",  :ip => "192.168.15.12", :cpu => "2", :ram => "2048" },
 
-  { :hostname => "n4-bastion",  :ip => "192.168.1.13", :cpu => "2", :ram => "2048" },
+  { :hostname => "n4-bastion",  :ip => "192.168.15.13", :cpu => "2", :ram => "2048" },
 
 ]
 
