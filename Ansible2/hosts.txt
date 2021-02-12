@@ -1,6 +1,6 @@
 [masters]
-master.example.com
+192.168.1.10
 
 [nodes]
-node1.example.com
-node2.example.com
+192.168.1.11
+192.168.1.12
