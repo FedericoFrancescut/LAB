@@ -2,7 +2,7 @@
   become: yes
   tasks:
     - name: initialize K8S cluster
-      shell: kubeadm init --pod-network-cidr=172.16.0.0/16 --apiserver-advertise-address=192.168.15.10
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.15.10
 
     - name: create .kube directory
       file:
